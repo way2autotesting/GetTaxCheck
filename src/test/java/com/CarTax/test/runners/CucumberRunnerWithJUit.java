@@ -9,9 +9,9 @@ import org.junit.runner.RunWith;
  */
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"src/test/java/com/dvla/test/features"},
+@CucumberOptions(features = {"src/test/java/com/CarTax/test/features"},
         format = {"json:target/cucumber-json-report.json", "html:target/cucumber-report-html"},
-        glue = {"com/dvla/test/steps"}
+        glue = {"com/CarTax/test/steps"}
         //, tags = "@Test01"
 )
 public class CucumberRunnerWithJUit {

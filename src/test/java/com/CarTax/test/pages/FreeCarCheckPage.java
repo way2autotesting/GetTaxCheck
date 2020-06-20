@@ -3,6 +3,7 @@ package com.CarTax.test.pages;
 import com.CarTax.framework.base.BasePage;
 import com.CarTax.framework.base.LocalDriverContext;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -48,26 +49,28 @@ public class FreeCarCheckPage extends BasePage {
 
     public VehicleIdentityPage ClickFreeCarCheckButton() {
 
-        WebElement freeCarCheck = new WebDriverWait(LocalDriverContext.getRemoteWebDriver(), 15)
-                .until(ExpectedConditions.presenceOfElementLocated(
-                        By.xpath("//*[@id='hyd-70pnnvjzqhw']/form/button")));
-        freeCarCheck.click();
+//        WebElement freeCarCheck = new WebDriverWait(LocalDriverContext.getRemoteWebDriver(), 15)
+//                .until(ExpectedConditions.presenceOfElementLocated(
+//                        By.xpath("//*[@id='hyd-70pnnvjzqhw']/form/button")));
+//        freeCarCheck.click();
+        enterRegistration.sendKeys(Keys.ENTER);
         return GetInstance(VehicleIdentityPage.class);
     }
 
 
     public String FileReader() throws IOException {
 
-
         FileReader fr = new FileReader(System.getProperty("user.dir") + "\\src\\test\\java\\com\\CarTax\\test\\data\\car_output.txt");
         BufferedReader br = new BufferedReader(fr);
-        System.out.println("FileReader 1 is : "+br);
+
+        System.out.println("FileReader 1 is : "+br.readLine());
 
         String fullText = br.readLine();
         String[] parts = fullText.split(",");
         String part1 = parts[0];
         System.out.println("part 1 is : "+part1);
 
+        //br.close();
 
         return part1;
     }

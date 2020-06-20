@@ -8,7 +8,6 @@ Feature: To check vehicle identity
 
 
   Scenario Outline:1- Extract vehicle information from external source into my file
-    #Given I have landed on webuyanycar website
     When I enter vehicle registration number "<Reg>" to get quote
     And I tab on the green button GO
     Then I land in Car Details page
@@ -17,10 +16,12 @@ Feature: To check vehicle identity
     Examples:
       | Reg     |
       | DN09HRM |
+      | EU16UAY |
+      | SD65FXC |
 
-    Scenario: 2- Validate all vehicle information extracted
-      Given I have landed to Cartaccheck website to perform Free Car Check
-      When I enter Vehicle registration number from our save file
-      And I tab the blue button to get free car check
-      Then I land in Vehicle Identity page
-     # And I validate all the vehicle details within this page
+  Scenario: 2- Validate all vehicle information extracted
+    Given I have landed to Cartaccheck website to perform Free Car Check
+    When I enter Vehicle registration number from our save file
+    And I tab the blue button to get free car check
+    Then I land in Vehicle Identity page
+    And I validate all the vehicle details within this page

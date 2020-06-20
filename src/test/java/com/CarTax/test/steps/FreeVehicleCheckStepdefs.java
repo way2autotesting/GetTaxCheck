@@ -72,35 +72,13 @@ public class FreeVehicleCheckStepdefs extends Base {
     public void iExtractTheVehicleRegistrationIntoMyNotepad(String regNo)  {
 
         CurrentPage.As(CarDetailsPage.class).WriteToFile(regNo);
-
-
-
-/*
-        NotePadUtil.SaveToFile(regNo);
-        NotePadUtil.SaveToFile(CurrentPage.As(CarDetailsPage.class).GetMakeOfTheVehicle());
-        NotePadUtil.SaveToFile(CurrentPage.As(CarDetailsPage.class).GetModelOfTheVehicle());
-        NotePadUtil.SaveToFile(CurrentPage.As(CarDetailsPage.class).GetColourOfTheVehicle());
-        NotePadUtil.SaveToFile(CurrentPage.As(CarDetailsPage.class).GetYearOfTheVehicle());
-        Settings.logs.Write("User extract information into notepad");
-        System.out.println("User extract information into notepad");*/
-
+        Settings.logs.Write("extracting the vehicle registration into the file");
+        System.out.println("extracting the vehicle registration into the file");
     }
-
-//    @And("^I navigate to cartaxcheck website to perform Free Car Check$")
-//    public void iNavigateToCartaxcheckWebsiteToPerformFreeCarCheck() throws Throwable {
-//
-//        CurrentPage = CurrentPage.As(CarDetailsPage.class).NavigateToFreeCarCheckWebsite();
-//        DriverContext.WaitForPageToLoad();
-//        Assert.assertTrue(CurrentPage.As(FreeCarCheckPage.class).CheckTitlePage());
-//        Assert.assertTrue(CurrentPage.As(FreeCarCheckPage.class).CheckTitlePage2());
-//        Settings.logs.Write("User navigate on Free Car Check page");
-//        System.out.println("User navigate on Free Car Check page");
-//    }
 
     @Given("^I have landed to Cartaccheck website to perform Free Car Check$")
     public void iHaveLandedToCartaccheckWebsiteToPerformFreeCarCheck()  {
 
-        //CurrentPage = CurrentPage.As(CarDetailsPage.class).NavigateToFreeCarCheckWebsite();
         CurrentPage = CurrentPage.As(WebuyanycarHomePage.class).NavigateToFreeCarCheckWebsite();
         DriverContext.WaitForPageToLoad();
         Assert.assertTrue(CurrentPage.As(FreeCarCheckPage.class).CheckTitlePage());
@@ -113,6 +91,8 @@ public class FreeVehicleCheckStepdefs extends Base {
     public void iEnterVehicleRegistrationNumberFromOurSaveFile() throws IOException {
 
         CurrentPage.As(FreeCarCheckPage.class).InputVehicleReg();
+        Settings.logs.Write("I input the registration number");
+        System.out.println("I input the registration number");
     }
 
     @And("^I tab the blue button to get free car check$")
@@ -120,24 +100,24 @@ public class FreeVehicleCheckStepdefs extends Base {
 
         CurrentPage = CurrentPage.As(FreeCarCheckPage.class).ClickFreeCarCheckButton();
         DriverContext.WaitForPageToLoad();
+        Settings.logs.Write("I click the blue button to get free car check");
+        System.out.println("I click the blue button to get free car check");
     }
 
     @Then("^I land in Vehicle Identity page$")
     public void iLandInVehicleIdentityPage()  {
 
+        DriverContext.WaitForPageToLoad();
         Assert.assertTrue(CurrentPage.As(VehicleIdentityPage.class).CheckTitlePage());
+        Settings.logs.Write("I have landed in vehicle identity page");
+        System.out.println("I have landed in vehicle identity page");
     }
 
     @And("^I validate all the vehicle details within this page$")
     public void iValidateAllTheVehicleDetailsWithinThisPage()  {
 
-        Assert.assertTrue(CurrentPage.As(VehicleIdentityPage.class).ValidateVehicleColourExist());
-        Assert.assertTrue(CurrentPage.As(VehicleIdentityPage.class).ValidateVehicleMakeExist());
-        Assert.assertTrue(CurrentPage.As(VehicleIdentityPage.class).ValidateVehicleModelExist());
-        Assert.assertTrue(CurrentPage.As(VehicleIdentityPage.class).ValidateVehicleRegExist());
-        Assert.assertTrue(CurrentPage.As(VehicleIdentityPage.class).ValidateVehicleYearExist());
-
-
-        //CurrentPage.As(VehicleIdentityPage.class).ValidateAllContentInEachLine(reg);
+        CurrentPage.As(VehicleIdentityPage.class).ValidateAllContentInEachLine();
+        Settings.logs.Write("Validate all the vehicle details");
+        System.out.println("Validate all the vehicle details");
     }
 }

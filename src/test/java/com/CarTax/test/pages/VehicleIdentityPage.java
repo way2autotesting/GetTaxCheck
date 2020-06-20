@@ -29,7 +29,7 @@ public class VehicleIdentityPage extends BasePage {
     public boolean CheckTitlePage() {
 
         System.out.println("title is " + LocalDriverContext.getRemoteWebDriver().getTitle());
-        return LocalDriverContext.getRemoteWebDriver().getTitle().equals("");
+        return LocalDriverContext.getRemoteWebDriver().getTitle().contains("Car Tax Check | Free Car Check");
     }
 
     //todo:----
@@ -42,10 +42,10 @@ public class VehicleIdentityPage extends BasePage {
         return colour.getText();
     }
 
-    public boolean ValidateVehicleColourExist(){
+    public boolean ValidateVehicleColourExist() {
 
         NotePadUtil np = new NotePadUtil();
-        if(GetColourOfTheVehicle().contains(np.ReadFile())){
+        if (GetColourOfTheVehicle().contains(np.ReadFile())) {
             return true;
         }
         return false;
@@ -61,10 +61,10 @@ public class VehicleIdentityPage extends BasePage {
         return year.getText();
     }
 
-    public boolean ValidateVehicleYearExist(){
+    public boolean ValidateVehicleYearExist() {
 
         NotePadUtil np = new NotePadUtil();
-        if(GetYearOfTheVehicle().contains(np.ReadFile())){
+        if (GetYearOfTheVehicle().contains(np.ReadFile())) {
             return true;
         }
         return false;
@@ -80,10 +80,10 @@ public class VehicleIdentityPage extends BasePage {
         return model.getText();
     }
 
-    public boolean ValidateVehicleModelExist(){
+    public boolean ValidateVehicleModelExist() {
 
         NotePadUtil np = new NotePadUtil();
-        if(GetModelOfTheVehicle().contains(np.ReadFile())){
+        if (GetModelOfTheVehicle().contains(np.ReadFile())) {
             return true;
         }
         return false;
@@ -99,10 +99,10 @@ public class VehicleIdentityPage extends BasePage {
         return make.getText();
     }
 
-    public boolean ValidateVehicleMakeExist(){
+    public boolean ValidateVehicleMakeExist() {
 
         NotePadUtil np = new NotePadUtil();
-        if(GetMakeOfTheVehicle().contains(np.ReadFile())){
+        if (GetMakeOfTheVehicle().contains(np.ReadFile())) {
             return true;
         }
         return false;
@@ -118,26 +118,26 @@ public class VehicleIdentityPage extends BasePage {
         return reg.getText();
     }
 
-    public boolean ValidateVehicleRegExist(){
+    public boolean ValidateVehicleRegExist() {
 
         NotePadUtil np = new NotePadUtil();
-        if(GetRegOfTheVehicle().contains(np.ReadFile())){
+        if (GetRegOfTheVehicle().contains(np.ReadFile())) {
             return true;
         }
         return false;
     }
 
 
-    public  void ValidateAllContentInEachLine(String reg) {
+    public void ValidateAllContentInEachLine() {
 
         try {
             FileReader fr = new FileReader(System.getProperty("user.dir") + "\\src\\test\\java\\com\\CarTax\\test\\data\\car_output.txt");
             BufferedReader br = new BufferedReader(fr);
-            String i = reg;
+            String i = "";
 
-            while ((i.contains( br.readLine()))) {
+            while ((i.contains(br.readLine()))) {
 
-               Assert.assertTrue(br.readLine().contains(GetMakeOfTheVehicle()));
+                Assert.assertTrue(br.readLine().contains(GetMakeOfTheVehicle()));
                 Assert.assertTrue(br.readLine().contains(GetModelOfTheVehicle()));
                 Assert.assertTrue(br.readLine().contains(GetColourOfTheVehicle()));
                 Assert.assertTrue(br.readLine().contains(GetYearOfTheVehicle()));
