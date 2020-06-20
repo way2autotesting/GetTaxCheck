@@ -65,12 +65,4 @@ public class DriverContext {
             alert.accept();
         }
     }
-
-    public static void DismissingAlert() {
-
-        // Switching to Alert
-        Alert alert = LocalDriverContext.getRemoteWebDriver().switchTo().alert();
-        // dismissing alert
-        alert.dismiss();
-    }
 }

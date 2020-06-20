@@ -18,14 +18,6 @@ public class NotePadUtil {
 
     private Scanner x;
 
-    public void OpenFile() {
-        try {
-            x = new Scanner(new File(System.getProperty("user.dir") + "\\src\\test\\java\\com\\CarTax\\test\\data\\car_output.txt"));
-        } catch (Exception e) {
-            System.out.println("Could not find file");
-        }
-    }
-
     public String ReadFile() {
         while (x.hasNext()) {
             String reg = x.next();
@@ -35,21 +27,6 @@ public class NotePadUtil {
         }
         x.close();
         return ReadFile();
-    }
-
-
-    public static void SaveToFile(String reg) {
-
-        try {
-            File f = new File(System.getProperty("user.dir") + "\\src\\test\\java\\com\\CarTax\\test\\data\\car_output.txt");
-            FileWriter fw = new FileWriter(f, true);
-            PrintWriter pw = new PrintWriter(fw);
-
-            pw.println(reg);
-            pw.close();
-        } catch (IOException e) {
-            System.out.println("Error in saveToFile method");
-        }
     }
 
     public static void FileReader(String reg) {
