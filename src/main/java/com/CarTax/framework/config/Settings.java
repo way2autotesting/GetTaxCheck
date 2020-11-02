@@ -4,7 +4,7 @@ import com.CarTax.framework.Utilities.LogUtil;
 import com.CarTax.framework.base.BrowserType;
 
 /**
- * Created by Ibi on 19/06/2020.
+ * Created by Ibi on 01/11/2020.
  */
 public class Settings {
 

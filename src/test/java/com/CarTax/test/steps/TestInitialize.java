@@ -16,7 +16,7 @@ import org.openqa.selenium.TakesScreenshot;
 import java.io.IOException;
 
 /**
- * Created by Ibi on 19/06/2020.
+ * Created by Ibi on 01/11/2020.
  */
 public class TestInitialize extends FrameworkInitialize{
 
@@ -55,9 +55,9 @@ public class TestInitialize extends FrameworkInitialize{
             //NotePadUtil util = new NotePadUtil(System.getProperty("user.dir") +"\\src\\test\\java\\com\\CarTax\\test\\\data\\car_output.txt");
             //todo: OR
 
-            System.out.println("Locate excel path");
+            System.out.println("Locate text file path");
         } catch (Exception e) {
-            Settings.logs.Write("Unable to locate Excel path");
+            Settings.logs.Write("Unable to locate text file path");
         }
     }
 

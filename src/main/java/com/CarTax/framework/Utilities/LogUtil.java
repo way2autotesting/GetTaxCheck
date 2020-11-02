@@ -10,7 +10,7 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Created by Ibi on 19/06/2020.
+ * Created by Ibi on 01/11/2020.
  */
 public class LogUtil {
 

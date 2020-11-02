@@ -1,17 +1,13 @@
 package com.CarTax.framework.base;
 
 import com.CarTax.framework.config.Settings;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
 
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by Ibi on 19/06/2020.
+ * Created by Ibi on 01/11/2020.
  */
 public class DriverContext {
 
@@ -54,15 +50,5 @@ public class DriverContext {
         wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
         WaitForPageToLoad();
         Settings.logs.Write("Wait for element to be clickable");
-    }
-
-    public static void AcceptingAlert() {
-
-        // Switching to Alert
-        Alert alert = LocalDriverContext.getRemoteWebDriver().switchTo().alert();
-        if (alert != null) {
-            // Accepting alert
-            alert.accept();
-        }
     }
 }

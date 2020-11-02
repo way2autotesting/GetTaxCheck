@@ -2,22 +2,21 @@ package com.CarTax.test.pages;
 
 import com.CarTax.framework.base.BasePage;
 import com.CarTax.framework.base.LocalDriverContext;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+import static com.CarTax.framework.Utilities.ReadFileToString.ExtractRegistrationNumberFromTheFile;
+
 /**
- * Created by Ibi on 19/06/2020.
+ * Created by Ibi on 01/11/2020.
  */
-public class FreeCarCheckPage extends BasePage {
+public class FreeCarCheckHomePage extends BasePage {
 
     //todo: WebElement region
     @FindBy(how = How.ID, using = "vrm-input")
@@ -42,17 +41,13 @@ public class FreeCarCheckPage extends BasePage {
         return pageTitleText.getText().equals("Free Car Check");
     }
 
-    public void InputVehicleReg() throws IOException {
+    public void InputVehicleReg(String regNumber) throws IOException {
 
-        enterRegistration.sendKeys(FileReader());
+        enterRegistration.sendKeys(ExtractRegistrationNumberFromTheFile(regNumber).trim());
     }
 
     public VehicleIdentityPage ClickFreeCarCheckButton() {
 
-//        WebElement freeCarCheck = new WebDriverWait(LocalDriverContext.getRemoteWebDriver(), 15)
-//                .until(ExpectedConditions.presenceOfElementLocated(
-//                        By.xpath("//*[@id='hyd-70pnnvjzqhw']/form/button")));
-//        freeCarCheck.click();
         enterRegistration.sendKeys(Keys.ENTER);
         return GetInstance(VehicleIdentityPage.class);
     }

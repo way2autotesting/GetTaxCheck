@@ -13,7 +13,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.util.HashMap;
 
 /**
- * Created by Ibi on 19/06/2020.
+ * Created by Ibi on 01/11/2020.
  */
 public class FrameworkInitialize {
 

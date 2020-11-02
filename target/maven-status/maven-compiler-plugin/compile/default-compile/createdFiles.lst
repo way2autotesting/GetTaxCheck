@@ -1,0 +1,13 @@
+com\CarTax\framework\base\BasePage.class
+com\CarTax\framework\Utilities\ReadFileToString.class
+com\CarTax\framework\base\FrameworkInitialize.class
+com\CarTax\framework\base\Browser.class
+com\CarTax\framework\Utilities\NotePadUtil.class
+com\CarTax\framework\base\FrameworkInitialize$1.class
+com\CarTax\framework\config\Settings.class
+com\CarTax\framework\base\LocalDriverContext.class
+com\CarTax\framework\Utilities\LogUtil.class
+com\CarTax\framework\config\ConfigReader.class
+com\CarTax\framework\base\BrowserType.class
+com\CarTax\framework\base\Base.class
+com\CarTax\framework\base\DriverContext.class

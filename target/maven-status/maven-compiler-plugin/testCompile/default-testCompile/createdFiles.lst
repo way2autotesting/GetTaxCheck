@@ -1,0 +1,8 @@
+com\CarTax\test\runners\CucumberRunnerWithTestNG.class
+com\CarTax\test\steps\UK_VehicleComparisonStepdefs.class
+com\CarTax\test\steps\FreeVehicleCheckStepdefs.class
+com\CarTax\test\steps\TestInitialize.class
+com\CarTax\test\pages\VehicleIdentityPage.class
+com\CarTax\test\pages\WebuyanycarHomePage.class
+com\CarTax\test\pages\FreeCarCheckHomePage.class
+com\CarTax\test\pages\CarDetailsPage.class
